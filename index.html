@@ -1,26 +1,33 @@
 <!DOCTYPE html>
-<html lang="bn" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bismillah Agro | প্রিমিয়াম অর্গানিক ফুড শপ</title>
-    
+    <title>Bismillah Agro | Premium Organic Food Shop</title>
+
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700&family=Poppins:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <style>
         body {
             font-family: 'Noto Sans Bengali', 'Poppins', sans-serif;
         }
+
         /* Parallax Background Classes */
         .parallax-hero {
             background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=1920&auto=format&fit=crop');
@@ -29,24 +36,28 @@
             background-repeat: no-repeat;
             background-size: cover;
         }
+
         .parallax-stats {
             background-image: linear-gradient(rgba(22, 163, 74, 0.9), rgba(21, 128, 61, 0.9)), url('https://images.unsplash.com/photo-1509358271058-acd22cc93898?q=80&w=1920&auto=format&fit=crop');
             background-attachment: fixed;
             background-position: center;
             background-size: cover;
         }
-        
+
         /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 10px;
         }
+
         ::-webkit-scrollbar-track {
             background: #f1f1f1;
         }
+
         ::-webkit-scrollbar-thumb {
             background: #16a34a;
             border-radius: 5px;
         }
+
         ::-webkit-scrollbar-thumb:hover {
             background: #15803d;
         }
@@ -57,11 +68,12 @@
             opacity: 0;
             pointer-events: none;
         }
+
         .modal.active {
             opacity: 1;
             pointer-events: auto;
         }
-        
+
         /* Floating Whatsapp */
         .whatsapp-float {
             position: fixed;
@@ -81,12 +93,49 @@
             justify-content: center;
             transition: all 0.3s ease;
         }
+
         .whatsapp-float:hover {
             transform: scale(1.1);
             background-color: #20ba5a;
         }
+
+        /* Swiper Customization */
+        .reviews-nav-btn {
+            top: auto !important;
+            bottom: 0px !important;
+            width: 44px !important;
+            height: 44px !important;
+            background-color: white !important;
+            color: #16a34a !important;
+            border-radius: 50% !important;
+            border: 1px solid #f3f4f6 !important;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1) !important;
+            transition: all 0.3s ease !important;
+            margin: 0 !important;
+        }
+
+        .reviews-nav-btn:hover {
+            background-color: #16a34a !important;
+            color: white !important;
+            border-color: #16a34a !important;
+            transform: scale(1.05);
+        }
+
+        .reviews-nav-btn::after {
+            font-size: 18px !important;
+            font-weight: bold !important;
+        }
+
+        .swiper-button-prev.reviews-nav-btn {
+            left: calc(50% - 100px) !important;
+        }
+
+        .swiper-button-next.reviews-nav-btn {
+            right: calc(50% - 100px) !important;
+        }
     </style>
 </head>
+
 <body class="bg-gray-50 text-gray-800 overflow-x-hidden">
 
     <!-- Navbar -->
@@ -94,17 +143,25 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
                 <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer group" onclick="window.scrollTo(0,0)">
-                    <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center group-hover:bg-green-600 transition duration-300">
-                        <i class="fa-solid fa-leaf text-green-600 text-xl group-hover:text-white transition duration-300"></i>
+                    <div
+                        class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center group-hover:bg-green-600 transition duration-300">
+                        <i
+                            class="fa-solid fa-leaf text-green-600 text-xl group-hover:text-white transition duration-300"></i>
                     </div>
-                    <span class="font-bold text-2xl text-gray-800 tracking-tight">Bismillah <span class="text-green-600">Agro</span></span>
+                    <span class="font-bold text-2xl text-gray-800 tracking-tight">Bismillah <span
+                            class="text-green-600">Agro</span></span>
                 </div>
                 <div class="hidden md:flex space-x-8 items-center">
-                    <a href="#home" class="text-gray-600 hover:text-green-600 font-medium transition hover:-translate-y-0.5">হোম</a>
-                    <a href="#products" class="text-gray-600 hover:text-green-600 font-medium transition hover:-translate-y-0.5">পণ্যসমূহ</a>
-                    <a href="#wholesale" class="text-gray-600 hover:text-green-600 font-medium transition hover:-translate-y-0.5">পাইকারি</a>
-                    <a href="#reviews" class="text-gray-600 hover:text-green-600 font-medium transition hover:-translate-y-0.5">রিভিউ</a>
-                    <a href="#contact" class="px-6 py-2.5 bg-green-600 text-white rounded-full font-medium hover:bg-green-700 transition shadow-lg hover:shadow-green-500/30 flex items-center gap-2 transform active:scale-95">
+                    <a href="#home"
+                        class="text-gray-600 hover:text-green-600 font-medium transition hover:-translate-y-0.5">Home</a>
+                    <a href="#products"
+                        class="text-gray-600 hover:text-green-600 font-medium transition hover:-translate-y-0.5">Products</a>
+                    <a href="#wholesale"
+                        class="text-gray-600 hover:text-green-600 font-medium transition hover:-translate-y-0.5">Wholesale</a>
+                    <a href="#reviews"
+                        class="text-gray-600 hover:text-green-600 font-medium transition hover:-translate-y-0.5">Reviews</a>
+                    <a href="#contact"
+                        class="px-6 py-2.5 bg-green-600 text-white rounded-full font-medium hover:bg-green-700 transition shadow-lg hover:shadow-green-500/30 flex items-center gap-2 transform active:scale-95">
                         <i class="fa-solid fa-phone"></i> 01328-060710
                     </a>
                 </div>
@@ -118,107 +175,101 @@
         </div>
         <!-- Mobile Menu -->
         <div class="md:hidden hidden bg-white border-t absolute w-full shadow-xl" id="mobile-menu">
-            <a href="#home" class="block px-6 py-3 text-gray-700 hover:bg-green-50 border-b border-gray-100">হোম</a>
-            <a href="#products" class="block px-6 py-3 text-gray-700 hover:bg-green-50 border-b border-gray-100">পণ্যসমূহ</a>
-            <a href="#wholesale" class="block px-6 py-3 text-gray-700 hover:bg-green-50 border-b border-gray-100">পাইকারি</a>
-            <a href="#reviews" class="block px-6 py-3 text-gray-700 hover:bg-green-50 border-b border-gray-100">রিভিউ</a>
-            <a href="tel:01328060710" class="block px-6 py-4 text-green-600 font-bold bg-green-50 text-center">কল করুন: 01328-060710</a>
+            <a href="#home" class="block px-6 py-3 text-gray-700 hover:bg-green-50 border-b border-gray-100">Home</a>
+            <a href="#products"
+                class="block px-6 py-3 text-gray-700 hover:bg-green-50 border-b border-gray-100">Products</a>
+            <a href="#wholesale"
+                class="block px-6 py-3 text-gray-700 hover:bg-green-50 border-b border-gray-100">Wholesale</a>
+            <a href="#reviews"
+                class="block px-6 py-3 text-gray-700 hover:bg-green-50 border-b border-gray-100">Reviews</a>
+            <a href="tel:01328060710" class="block px-6 py-4 text-green-600 font-bold bg-green-50 text-center">Call Us:
+                01328-060710</a>
         </div>
     </nav>
 
     <!-- Hero Section (Parallax) -->
     <section id="home" class="parallax-hero h-screen flex items-center justify-center text-center px-4 relative">
         <div class="max-w-5xl mx-auto text-white z-10 pt-16" data-aos="fade-up" data-aos-duration="1000">
-            <div class="inline-flex items-center gap-2 py-1 px-4 rounded-full bg-white/10 border border-white/20 text-green-300 text-sm font-semibold mb-6 backdrop-blur-md hover:bg-white/20 transition cursor-default">
-                <i class="fa-solid fa-check-circle"></i> ১০০% প্রাকৃতিক ও অর্গানিক
+            <div
+                class="inline-flex items-center gap-2 py-1 px-4 rounded-full bg-white/10 border border-white/20 text-green-300 text-sm font-semibold mb-6 backdrop-blur-md hover:bg-white/20 transition cursor-default">
+                <i class="fa-solid fa-check-circle"></i> 100% Natural & Organic
             </div>
             <h1 class="text-4xl md:text-7xl font-bold mb-6 leading-tight drop-shadow-lg">
-                সুস্থ জীবনের জন্য <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-300">বিশুদ্ধতার প্রতিশ্রুতি</span>
+                For a Healthy Life <br> <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-300">The Promise of
+                    Purity</span>
             </h1>
             <p class="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto leading-relaxed font-light">
-                আমরা নিয়ে এসেছি ভেজালমুক্ত মশলা, ভেষজ গুঁড়া এবং অর্গানিক পণ্য। আপনার এবং আপনার পরিবারের সুস্বাস্থ্যই আমাদের প্রধান লক্ষ্য।
+                We bring you unadulterated spices, herbal powders, and organic products. Your health is our primary
+                goal.
             </p>
             <div class="flex flex-col sm:flex-row gap-5 justify-center">
-                <a href="#products" class="px-8 py-4 bg-green-600 text-white rounded-lg font-bold hover:bg-green-700 transition shadow-xl hover:shadow-green-500/30 flex items-center justify-center gap-2 transform hover:-translate-y-1">
-                    <i class="fa-solid fa-basket-shopping"></i> এখনই অর্ডার করুন
+                <a href="#products"
+                    class="px-8 py-4 bg-green-600 text-white rounded-lg font-bold hover:bg-green-700 transition shadow-xl hover:shadow-green-500/30 flex items-center justify-center gap-2 transform hover:-translate-y-1">
+                    <i class="fa-solid fa-basket-shopping"></i> Order Now
                 </a>
-                <a href="#wholesale" class="px-8 py-4 bg-white/90 backdrop-blur-sm text-gray-800 rounded-lg font-bold hover:bg-white transition shadow-xl flex items-center justify-center gap-2 transform hover:-translate-y-1">
-                    <i class="fa-solid fa-handshake text-green-600"></i> পাইকারি কিনুন
+                <a href="#wholesale"
+                    class="px-8 py-4 bg-white/90 backdrop-blur-sm text-gray-800 rounded-lg font-bold hover:bg-white transition shadow-xl flex items-center justify-center gap-2 transform hover:-translate-y-1">
+                    <i class="fa-solid fa-handshake text-green-600"></i> Buy Wholesale
                 </a>
             </div>
         </div>
-        
+
         <!-- Animated Scroll Down -->
         <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce text-white/50">
             <i class="fa-solid fa-chevron-down text-2xl"></i>
         </div>
     </section>
 
-    <!-- Why Choose Us Section -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">কেন <span class="text-green-600">Bismillah Agro</span> সেরা?</h2>
-                <div class="w-24 h-1 bg-green-500 mx-auto rounded-full"></div>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-8 bg-gray-50 rounded-2xl hover:bg-white hover:shadow-2xl transition duration-300 border border-gray-100 group text-center" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition duration-300">
-                        <i class="fa-solid fa-seedling text-3xl text-green-600"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-800">১০০% প্রাকৃতিক</h3>
-                    <p class="text-gray-600">আমাদের পণ্যে কোনো ক্ষতিকারক কেমিক্যাল বা কৃত্রিম রং ব্যবহার করা হয় না। একদম মাঠ থেকে সরাসরি আপনার রান্নাঘরে।</p>
-                </div>
-                
-                <div class="p-8 bg-gray-50 rounded-2xl hover:bg-white hover:shadow-2xl transition duration-300 border border-gray-100 group text-center" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition duration-300">
-                        <i class="fa-solid fa-mortar-pestle text-3xl text-green-600"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-800">নিজস্ব প্রক্রিয়াজাতকরণ</h3>
-                    <p class="text-gray-600">আমরা বাছাইকৃত কাঁচামাল সংগ্রহ করে নিজস্ব তত্ত্বাবধানে স্বাস্থ্যসম্মত পরিবেশে গুঁড়া ও প্যাকেটজাত করি।</p>
-                </div>
-                
-                <div class="p-8 bg-gray-50 rounded-2xl hover:bg-white hover:shadow-2xl transition duration-300 border border-gray-100 group text-center" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition duration-300">
-                        <i class="fa-solid fa-truck-fast text-3xl text-green-600"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-800">দ্রুত ডেলিভারি</h3>
-                    <p class="text-gray-600">অর্ডার করার খুব অল্প সময়ের মধ্যেই আমরা দেশের যেকোনো প্রান্তে পণ্য পৌঁছে দিয়ে থাকি।</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Wholesale Section -->
     <section id="wholesale" class="py-20 bg-gradient-to-br from-amber-50 to-orange-50 overflow-hidden relative">
-        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-orange-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
-        <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-yellow-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+        <div
+            class="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-orange-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-yellow-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000">
+        </div>
 
         <div class="container mx-auto px-4 relative z-10">
-            <div class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-amber-100 transform hover:-translate-y-1 transition duration-500">
+            <div
+                class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-amber-100 transform hover:-translate-y-1 transition duration-500">
                 <div class="grid lg:grid-cols-2">
                     <div class="p-10 lg:p-16 flex flex-col justify-center" data-aos="fade-right">
-                        <div class="inline-block w-fit px-4 py-1.5 bg-amber-100 text-amber-800 rounded-full text-xs font-bold uppercase tracking-wider mb-6">Business Solution</div>
-                        <h2 class="text-3xl md:text-5xl font-bold text-gray-800 mb-6">পাইকারি দামে <br><span class="text-amber-600">ব্যবসার সেরা সঙ্গী</span></h2>
+                        <div
+                            class="inline-block w-fit px-4 py-1.5 bg-amber-100 text-amber-800 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
+                            Business Solution</div>
+                        <h2 class="text-3xl md:text-5xl font-bold text-gray-800 mb-6">Best companion for business
+                            <br><span class="text-amber-600">at wholesale prices</span>
+                        </h2>
                         <p class="text-gray-600 mb-8 leading-relaxed text-lg">
-                            রেস্টুরেন্ট, হোটেল, বেকারি কিংবা মুদি দোকান—আপনার ব্যবসার জন্য আমরা দিচ্ছি সেরা মানের পণ্য সবচেয়ে সাশ্রয়ী মূল্যে।
+                            Restaurant, hotel, bakery, or grocery store—we offer the best quality products for your
+                            business at the most affordable prices.
                         </p>
                         <ul class="space-y-4 mb-8">
-                            <li class="flex items-center gap-3 text-gray-700 font-medium"><i class="fa-solid fa-circle-check text-green-500 text-xl"></i> সরাসরি ফ্যাক্টরি রেট</li>
-                            <li class="flex items-center gap-3 text-gray-700 font-medium"><i class="fa-solid fa-circle-check text-green-500 text-xl"></i> বাল্ক অর্ডারে ফ্রি ডেলিভারি</li>
-                            <li class="flex items-center gap-3 text-gray-700 font-medium"><i class="fa-solid fa-circle-check text-green-500 text-xl"></i> কোয়ালিটি টেস্টিং রিপোর্ট</li>
+                            <li class="flex items-center gap-3 text-gray-700 font-medium"><i
+                                    class="fa-solid fa-circle-check text-green-500 text-xl"></i> Direct Factory Rate
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-700 font-medium"><i
+                                    class="fa-solid fa-circle-check text-green-500 text-xl"></i> Free Delivery on Bulk
+                                Orders</li>
+                            <li class="flex items-center gap-3 text-gray-700 font-medium"><i
+                                    class="fa-solid fa-circle-check text-green-500 text-xl"></i> Quality Testing Report
+                            </li>
                         </ul>
-                        <a href="tel:01328060710" class="w-fit px-8 py-4 bg-amber-600 text-white rounded-xl font-bold hover:bg-amber-700 transition shadow-lg shadow-amber-500/30 flex items-center gap-3">
-                            <i class="fa-solid fa-phone-volume animate-pulse"></i> পাইকারির জন্য কল করুন
+                        <a href="tel:01328060710"
+                            class="w-fit px-8 py-4 bg-amber-600 text-white rounded-xl font-bold hover:bg-amber-700 transition shadow-lg shadow-amber-500/30 flex items-center gap-3">
+                            <i class="fa-solid fa-phone-volume animate-pulse"></i> Call for Wholesale
                         </a>
                     </div>
                     <div class="relative h-80 lg:h-auto" data-aos="fade-left">
-                        <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=1000&auto=format&fit=crop" alt="Spices Wholesale" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent lg:bg-gradient-to-l"></div>
+                        <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=1000&auto=format&fit=crop"
+                            alt="Spices Wholesale" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent lg:bg-gradient-to-l">
+                        </div>
                         <div class="absolute bottom-8 left-8 text-white">
-                            <p class="text-3xl font-bold">১০+</p>
-                            <p class="text-sm opacity-90">পার্টনার রেস্টুরেন্ট</p>
+                            <p class="text-3xl font-bold">10+</p>
+                            <p class="text-sm opacity-90">Partner Restaurants</p>
                         </div>
                     </div>
                 </div>
@@ -232,20 +283,119 @@
         <div class="container mx-auto px-4 relative z-10">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
                 <div data-aos="zoom-in">
-                    <div class="text-5xl font-bold mb-2">৫০০০+</div>
-                    <div class="text-green-200">হ্যাপি কাস্টমার</div>
+                    <div class="text-5xl font-bold mb-2">5000+</div>
+                    <div class="text-green-200">Happy Customers</div>
                 </div>
                 <div data-aos="zoom-in" data-aos-delay="100">
-                    <div class="text-5xl font-bold mb-2">৩০+</div>
-                    <div class="text-green-200">প্রিমিয়াম পণ্য</div>
+                    <div class="text-5xl font-bold mb-2">100+</div>
+                    <div class="text-green-200">Premium Products</div>
                 </div>
                 <div data-aos="zoom-in" data-aos-delay="200">
-                    <div class="text-5xl font-bold mb-2">৬৪</div>
-                    <div class="text-green-200">জেলায় ডেলিভারি</div>
+                    <div class="text-5xl font-bold mb-2">64</div>
+                    <div class="text-green-200">Districts Delivery</div>
                 </div>
                 <div data-aos="zoom-in" data-aos-delay="300">
-                    <div class="text-5xl font-bold mb-2">১০০%</div>
-                    <div class="text-green-200">খাঁটি গ্যারান্টি</div>
+                    <div class="text-5xl font-bold mb-2">100%</div>
+                    <div class="text-green-200">Authentic Guarantee</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Customers Section -->
+    <section class="py-24 bg-white relative overflow-hidden">
+        <!-- Decorative Background -->
+        <div
+            class="absolute top-0 left-0 w-72 h-72 bg-green-100 rounded-full mix-blend-multiply filter blur-3xl opacity-50 -translate-x-1/2 -translate-y-1/2">
+        </div>
+        <div
+            class="absolute bottom-0 right-0 w-72 h-72 bg-amber-100 rounded-full mix-blend-multiply filter blur-3xl opacity-50 translate-x-1/2 translate-y-1/2">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-green-600 font-bold tracking-wider uppercase text-sm">Our Target Audience</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-2 mb-4">Who Are Our <span
+                        class="text-green-600">Customers?</span></h2>
+                <div class="w-24 h-1 bg-green-500 mx-auto rounded-full mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">We proudly supply our premium quality, 100% natural
+                    ingredients and spices to top-tier businesses across the country.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Food Factory Card -->
+                <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 group"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-56 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition duration-300 z-10">
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1563865436874-cb256d0bd831?q=80&w=800&auto=format&fit=crop"
+                            alt="Food Factory"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                        <div class="absolute bottom-4 left-4 z-20">
+                            <div
+                                class="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-lg transform group-hover:-translate-y-2 transition duration-300">
+                                <i class="fa-solid fa-industry text-2xl text-green-600"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3 group-hover:text-green-600 transition">Food
+                            Factories</h3>
+                        <p class="text-gray-600 leading-relaxed">Supplying unadulterated raw materials and natural
+                            ingredients to major food processing companies for ensuring the highest quality in their
+                            food products.</p>
+                    </div>
+                </div>
+
+                <!-- Spice Factory Card -->
+                <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 group"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-56 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition duration-300 z-10">
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=800&auto=format&fit=crop"
+                            alt="Spice Factory"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                        <div class="absolute bottom-4 left-4 z-20">
+                            <div
+                                class="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-lg transform group-hover:-translate-y-2 transition duration-300">
+                                <i class="fa-solid fa-mortar-pestle text-2xl text-amber-500"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3 group-hover:text-amber-500 transition">Spice
+                            Factories</h3>
+                        <p class="text-gray-600 leading-relaxed">Providing 100% authentic, raw spices and herbs to top
+                            spice factories, helping them maintain their distinct aromatic flavors and hygiene
+                            standards.</p>
+                    </div>
+                </div>
+
+                <!-- Bakery Factory Card -->
+                <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 group"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-56 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition duration-300 z-10">
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800&auto=format&fit=crop"
+                            alt="Bakery Factory"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                        <div class="absolute bottom-4 left-4 z-20">
+                            <div
+                                class="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-lg transform group-hover:-translate-y-2 transition duration-300">
+                                <i class="fa-solid fa-bread-slice text-2xl text-orange-500"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3 group-hover:text-orange-500 transition">Bakery
+                            Factories</h3>
+                        <p class="text-gray-600 leading-relaxed">Partnering with leading bakeries to supply premium
+                            seeds, powders, and natural flavoring ingredients essential for preparing baked goods and
+                            confectionery.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -255,21 +405,25 @@
     <section id="products" class="py-24 px-4 bg-gray-50">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-12" data-aos="fade-down">
-                <span class="text-green-600 font-bold tracking-wider uppercase text-sm">আমাদের কালেকশন</span>
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mt-2 mb-4">প্রিমিয়াম <span class="text-green-600">পণ্যসমূহ</span></h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">নিচে আমাদের সকল পণ্যের তালিকা দেওয়া হলো। আপনি নাম লিখে সার্চ করেও আপনার প্রয়োজনীয় পণ্যটি খুঁজে নিতে পারেন।</p>
-                
+                <span class="text-green-600 font-bold tracking-wider uppercase text-sm">Our Collection</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mt-2 mb-4">Premium <span
+                        class="text-green-600">Products</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Below is the list of all our products. You can also
+                    search by
+                    name to find the product you need.</p>
+
                 <!-- Advanced Search Bar -->
-                <div class="mt-10 max-w-2xl mx-auto relative group">
-                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                        <i class="fa-solid fa-search text-gray-400 text-lg group-focus-within:text-green-500 transition"></i>
+                <div class="mt-8 max-w-3xl mx-auto relative group">
+                    <div class="absolute inset-y-0 left-0 pl-6 flex items-center pointer-events-none">
+                        <i
+                            class="fa-solid fa-magnifying-glass text-gray-400 text-xl group-focus-within:text-green-600 transition duration-300"></i>
                     </div>
-                    <input type="text" id="searchInput" 
-                           placeholder="পণ্য খুঁজুন (উদাহরণ: দারুচিনি, Cinnamon, Darchini...)" 
-                           class="w-full pl-12 pr-4 py-4 rounded-full border border-gray-200 focus:outline-none focus:border-green-500 focus:ring-4 focus:ring-green-500/10 shadow-lg transition text-lg bg-white">
-                    <div class="absolute inset-y-0 right-2 flex items-center">
-                        <button class="bg-green-600 text-white p-2.5 rounded-full hover:bg-green-700 transition">
-                           <i class="fa-solid fa-arrow-right"></i>
+                    <input type="text" id="searchInput" placeholder="Search product (example: Cinnamon, Darchini...)"
+                        class="w-full pl-16 pr-16 py-5 rounded-full border border-gray-100 bg-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] focus:outline-none focus:border-green-500 focus:ring-4 focus:ring-green-500/10 transition-all duration-300 text-lg text-gray-700 placeholder-gray-400 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
+                    <div class="absolute inset-y-0 right-3 flex items-center">
+                        <button
+                            class="w-12 h-12 bg-green-600 text-white rounded-full hover:bg-green-700 hover:shadow-lg hover:shadow-green-600/30 transition-all duration-300 flex items-center justify-center group/btn">
+                            <i class="fa-solid fa-arrow-right group-hover/btn:translate-x-1 transition-transform"></i>
                         </button>
                     </div>
                 </div>
@@ -282,78 +436,185 @@
         </div>
     </section>
 
-    <!-- Reviews Section -->
-    <section id="reviews" class="py-24 bg-white relative">
-        <div class="container mx-auto px-4">
+    <!-- Why Choose Us Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">গ্রাহকদের <span class="text-green-600">মতামত</span></h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Why <span class="text-green-600">Bismillah
+                        Agro</span> is best?</h2>
                 <div class="w-24 h-1 bg-green-500 mx-auto rounded-full"></div>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Review 1 -->
-                <div class="bg-gray-50 p-8 rounded-2xl shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 relative" data-aos="fade-up" data-aos-delay="100">
-                    <i class="fa-solid fa-quote-right absolute top-8 right-8 text-4xl text-green-100"></i>
-                    <div class="flex items-center gap-1 text-amber-400 mb-4">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <div class="p-8 bg-gray-50 rounded-2xl hover:bg-white hover:shadow-2xl transition duration-300 border border-gray-100 group text-center"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition duration-300">
+                        <i class="fa-solid fa-seedling text-3xl text-green-600"></i>
                     </div>
-                    <p class="text-gray-600 italic mb-6">"আমি রেস্টুরেন্টের জন্য বারবিকিউ মসলা আর চাট মসলা নিয়েছিলাম। কাস্টমাররা খাবারের টেস্ট খুব পছন্দ করেছে। কোয়ালিটি সত্যিই প্রিমিয়াম।"</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-green-200 rounded-full flex items-center justify-center text-green-700 font-bold text-xl">R</div>
-                        <div>
-                            <h4 class="font-bold text-gray-800">রাশেদ খান</h4>
-                            <p class="text-xs text-gray-500">মালিক, ক্যাফে বিস্ট্রো</p>
-                        </div>
-                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">100% Natural</h3>
+                    <p class="text-gray-600">We do not use harmful chemicals or artificial colors in our products.
+                        Straight from the field to your kitchen.</p>
                 </div>
 
-                <!-- Review 2 -->
-                <div class="bg-gray-50 p-8 rounded-2xl shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 relative" data-aos="fade-up" data-aos-delay="200">
-                    <i class="fa-solid fa-quote-right absolute top-8 right-8 text-4xl text-green-100"></i>
-                    <div class="flex items-center gap-1 text-amber-400 mb-4">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <div class="p-8 bg-gray-50 rounded-2xl hover:bg-white hover:shadow-2xl transition duration-300 border border-gray-100 group text-center"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition duration-300">
+                        <i class="fa-solid fa-mortar-pestle text-3xl text-green-600"></i>
                     </div>
-                    <p class="text-gray-600 italic mb-6">"বাচ্চাদের জন্য চেরি পাউডার আর নিজের জন্য চিয়াসিড অর্ডার করেছিলাম। প্যাকেজিং খুব সুন্দর ছিল এবং প্রোডাক্ট ১০০% অরিজিনাল মনে হয়েছে।"</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-purple-200 rounded-full flex items-center justify-center text-purple-700 font-bold text-xl">S</div>
-                        <div>
-                            <h4 class="font-bold text-gray-800">সুমাইয়া আক্তার</h4>
-                            <p class="text-xs text-gray-500">গৃহিনী, ঢাকা</p>
-                        </div>
-                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">In-house Processing</h3>
+                    <p class="text-gray-600">We collect selected raw materials and process/package them under our own
+                        supervision in a hygienic environment.</p>
                 </div>
 
-                <!-- Review 3 -->
-                <div class="bg-gray-50 p-8 rounded-2xl shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 relative" data-aos="fade-up" data-aos-delay="300">
-                    <i class="fa-solid fa-quote-right absolute top-8 right-8 text-4xl text-green-100"></i>
-                    <div class="flex items-center gap-1 text-amber-400 mb-4">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                <div class="p-8 bg-gray-50 rounded-2xl hover:bg-white hover:shadow-2xl transition duration-300 border border-gray-100 group text-center"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div
+                        class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition duration-300">
+                        <i class="fa-solid fa-truck-fast text-3xl text-green-600"></i>
                     </div>
-                    <p class="text-gray-600 italic mb-6">"পাইকারি রেটে ফ্যাক্টরির জন্য চিপস মসলা নিয়েছিলাম। বিসমিল্লাহ এগ্রোর সার্ভিস খুবই ফাস্ট। একদিনেই ডেলিভারি পেয়েছি।"</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-blue-200 rounded-full flex items-center justify-center text-blue-700 font-bold text-xl">K</div>
-                        <div>
-                            <h4 class="font-bold text-gray-800">কামরুল হাসান</h4>
-                            <p class="text-xs text-gray-500">উদ্যোক্তা, চট্টগ্রাম</p>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Fast Delivery</h3>
+                    <p class="text-gray-600">We deliver products anywhere in the country within a very short time of
+                        ordering.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-24 bg-white relative">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Customer <span
+                        class="text-green-600">Reviews</span></h2>
+                <div class="w-24 h-1 bg-green-500 mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Swiper -->
+            <div class="swiper reviewsSwiper pb-16 relative" data-aos="fade-up" data-aos-delay="100">
+                <div class="swiper-wrapper">
+                    <!-- Review 1 -->
+                    <div class="swiper-slide h-auto">
+                        <div
+                            class="bg-gray-50 p-8 rounded-2xl shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 relative h-full flex flex-col">
+                            <i class="fa-solid fa-quote-right absolute top-8 right-8 text-4xl text-green-100"></i>
+                            <div class="flex items-center gap-1 text-amber-400 mb-4">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gray-600 italic mb-6 flex-grow">"I took barbecue masala and chaat masala for
+                                the restaurant. Customers loved the taste of the food. The quality is truly premium."
+                            </p>
+                            <div class="flex items-center gap-4 mt-auto">
+                                <div
+                                    class="w-12 h-12 bg-green-200 rounded-full flex items-center justify-center text-green-700 font-bold text-xl flex-shrink-0">
+                                    R</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Rashed Khan</h4>
+                                    <p class="text-xs text-gray-500">Owner, Cafe Bistro</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div class="swiper-slide h-auto">
+                        <div
+                            class="bg-gray-50 p-8 rounded-2xl shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 relative h-full flex flex-col">
+                            <i class="fa-solid fa-quote-right absolute top-8 right-8 text-4xl text-green-100"></i>
+                            <div class="flex items-center gap-1 text-amber-400 mb-4">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gray-600 italic mb-6 flex-grow">"I ordered cherry powder for kids and chia
+                                seeds for myself. The packaging was beautiful and the product seems 100% original."</p>
+                            <div class="flex items-center gap-4 mt-auto">
+                                <div
+                                    class="w-12 h-12 bg-purple-200 rounded-full flex items-center justify-center text-purple-700 font-bold text-xl flex-shrink-0">
+                                    S</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Sumaiya Akter</h4>
+                                    <p class="text-xs text-gray-500">Housewife, Dhaka</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div class="swiper-slide h-auto">
+                        <div
+                            class="bg-gray-50 p-8 rounded-2xl shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 relative h-full flex flex-col">
+                            <i class="fa-solid fa-quote-right absolute top-8 right-8 text-4xl text-green-100"></i>
+                            <div class="flex items-center gap-1 text-amber-400 mb-4">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                            <p class="text-gray-600 italic mb-6 flex-grow">"Bought chips masala for the factory at
+                                wholesale rate. Bismillah Agro's service is very fast. Got delivery in one day."</p>
+                            <div class="flex items-center gap-4 mt-auto">
+                                <div
+                                    class="w-12 h-12 bg-blue-200 rounded-full flex items-center justify-center text-blue-700 font-bold text-xl flex-shrink-0">
+                                    K</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Kamrul Hasan</h4>
+                                    <p class="text-xs text-gray-500">Entrepreneur, Chittagong</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 4 -->
+                    <div class="swiper-slide h-auto">
+                        <div
+                            class="bg-gray-50 p-8 rounded-2xl shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 relative h-full flex flex-col">
+                            <i class="fa-solid fa-quote-right absolute top-8 right-8 text-4xl text-green-100"></i>
+                            <div class="flex items-center gap-1 text-amber-400 mb-4">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gray-600 italic mb-6 flex-grow">"Their organic spices are completely
+                                different from what you get in the local market. Highly recommended for daily cooking!"
+                            </p>
+                            <div class="flex items-center gap-4 mt-auto">
+                                <div
+                                    class="w-12 h-12 bg-orange-200 rounded-full flex items-center justify-center text-orange-700 font-bold text-xl flex-shrink-0">
+                                    F</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Farhana Yesmin</h4>
+                                    <p class="text-xs text-gray-500">Chef, Dhaka</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <!-- Navigation -->
+                <div class="swiper-button-prev reviews-nav-btn"></div>
+                <div class="swiper-button-next reviews-nav-btn"></div>
             </div>
         </div>
     </section>
 
     <!-- Newsletter / CTA -->
     <section class="py-20 bg-green-600 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/food.png')]"></div>
+        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/food.png')]">
+        </div>
         <div class="container mx-auto px-4 text-center relative z-10">
-            <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">অর্ডার করতে প্রস্তুত?</h2>
-            <p class="text-green-100 mb-10 max-w-2xl mx-auto text-lg">আমরা দেশের যেকোনো প্রান্তে হোম ডেলিভারি দিয়ে থাকি। আপনার প্রয়োজনীয় পণ্যটি বেছে নিন এবং আমাদের কল করুন।</p>
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Ready to Order?</h2>
+            <p class="text-green-100 mb-10 max-w-2xl mx-auto text-lg">We provide home delivery anywhere in the country.
+                Choose your required product and call us.</p>
             <div class="flex flex-col sm:flex-row justify-center gap-5">
-                <a href="tel:01328060710" class="px-10 py-4 bg-white text-green-700 rounded-full font-bold hover:bg-gray-100 transition shadow-2xl flex items-center justify-center gap-3 transform hover:scale-105">
+                <a href="tel:01328060710"
+                    class="px-10 py-4 bg-white text-green-700 rounded-full font-bold hover:bg-gray-100 transition shadow-2xl flex items-center justify-center gap-3 transform hover:scale-105">
                     <i class="fa-solid fa-phone"></i> 01328-060710
                 </a>
-                <a href="https://m.me/B.mosla" target="_blank" class="px-10 py-4 bg-transparent border-2 border-white text-white rounded-full font-bold hover:bg-white hover:text-green-700 transition flex items-center justify-center gap-3">
-                    <i class="fa-brands fa-facebook-messenger"></i> মেসেজ করুন
+                <a href="https://m.me/B.mosla" target="_blank"
+                    class="px-10 py-4 bg-transparent border-2 border-white text-white rounded-full font-bold hover:bg-white hover:text-green-700 transition flex items-center justify-center gap-3">
+                    <i class="fa-brands fa-facebook-messenger"></i> Message Us
                 </a>
             </div>
         </div>
@@ -366,38 +627,50 @@
                 <div class="col-span-1 md:col-span-2">
                     <div class="flex items-center gap-2 mb-6">
                         <i class="fa-solid fa-leaf text-green-500 text-3xl"></i>
-                        <span class="font-bold text-2xl text-white">Bismillah <span class="text-green-500">Agro</span></span>
+                        <span class="font-bold text-2xl text-white">Bismillah <span
+                                class="text-green-500">Agro</span></span>
                     </div>
-                    <p class="text-sm leading-loose max-w-md">বিশুদ্ধতার প্রতিশ্রুতি নিয়ে আমরা আছি আপনার পাশে। আমাদের সকল পণ্য ১০০% কেমিক্যাল মুক্ত এবং প্রাকৃতিক। আপনার স্বাস্থ্যই আমাদের সম্পদ।</p>
+                    <p class="text-sm leading-loose max-w-md">We are by your side with the promise of purity. All our
+                        products are 100% chemical free and natural. Your health is our asset.</p>
                     <div class="flex gap-4 mt-6">
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-pink-600 hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-green-600 hover:text-white transition"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-pink-600 hover:text-white transition"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-green-600 hover:text-white transition"><i
+                                class="fa-brands fa-whatsapp"></i></a>
                     </div>
                 </div>
                 <div>
-                    <h4 class="text-lg font-bold text-white mb-6">দ্রুত লিঙ্ক</h4>
+                    <h4 class="text-lg font-bold text-white mb-6">Quick Links</h4>
                     <ul class="space-y-3 text-sm">
-                        <li><a href="#home" class="hover:text-green-400 transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs"></i> হোম</a></li>
-                        <li><a href="#products" class="hover:text-green-400 transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs"></i> পণ্য তালিকা</a></li>
-                        <li><a href="#wholesale" class="hover:text-green-400 transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs"></i> পাইকারি অফার</a></li>
-                        <li><a href="#reviews" class="hover:text-green-400 transition flex items-center gap-2"><i class="fa-solid fa-chevron-right text-xs"></i> গ্রাহক মতামত</a></li>
+                        <li><a href="#home" class="hover:text-green-400 transition flex items-center gap-2"><i
+                                    class="fa-solid fa-chevron-right text-xs"></i> হোম</a></li>
+                        <li><a href="#products" class="hover:text-green-400 transition flex items-center gap-2"><i
+                                    class="fa-solid fa-chevron-right text-xs"></i> Products List</a></li>
+                        <li><a href="#wholesale" class="hover:text-green-400 transition flex items-center gap-2"><i
+                                    class="fa-solid fa-chevron-right text-xs"></i> Wholesale Offer</a></li>
+                        <li><a href="#reviews" class="hover:text-green-400 transition flex items-center gap-2"><i
+                                    class="fa-solid fa-chevron-right text-xs"></i> Customer Reviews</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-lg font-bold text-white mb-6">যোগাযোগ</h4>
+                    <h4 class="text-lg font-bold text-white mb-6">Contact</h4>
                     <ul class="space-y-4">
                         <li class="flex items-start gap-3">
                             <i class="fa-solid fa-phone text-green-500 mt-1"></i>
                             <div>
-                                <span class="block text-xs text-gray-500">কল করুন (২৪/৭)</span>
+                                <span class="block text-xs text-gray-500">Call Us (24/7)</span>
                                 <span class="text-white font-bold">01328-060710</span>
                             </div>
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="fa-solid fa-envelope text-green-500 mt-1"></i>
                             <div>
-                                <span class="block text-xs text-gray-500">ইমেইল</span>
+                                <span class="block text-xs text-gray-500">Email</span>
                                 <span class="text-white">contact@bismillahagro.com</span>
                             </div>
                         </li>
@@ -405,8 +678,9 @@
                 </div>
             </div>
             <div class="pt-8 text-center text-sm text-gray-500 flex flex-col md:flex-row justify-between items-center">
-                <p>&copy; 2025 Bismillah Agro. সর্বস্বত্ব সংরক্ষিত।</p>
-                <p class="mt-2 md:mt-0">Designed with <i class="fa-solid fa-heart text-red-500"></i> by Bismillah Agro Team</p>
+                <p>&copy; 2025 Bismillah Agro. All Rights Reserved.</p>
+                <p class="mt-2 md:mt-0">Designed with <i class="fa-solid fa-heart text-red-500"></i> by Bismillah Agro
+                    Team</p>
             </div>
         </div>
     </footer>
@@ -419,28 +693,37 @@
     <!-- Product Detail Modal -->
     <div id="productModal" class="modal fixed inset-0 z-[60] flex items-center justify-center px-4">
         <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeModal()"></div>
-        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto relative z-10 transform transition-all scale-95 flex flex-col md:flex-row overflow-hidden" id="modalContent">
-            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-red-500 bg-white hover:bg-red-50 p-2 rounded-full transition z-20 shadow-md">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto relative z-10 transform transition-all scale-95 flex flex-col md:flex-row overflow-hidden"
+            id="modalContent">
+            <button onclick="closeModal()"
+                class="absolute top-4 right-4 text-gray-400 hover:text-red-500 bg-white hover:bg-red-50 p-2 rounded-full transition z-20 shadow-md">
                 <i class="fa-solid fa-times text-xl"></i>
             </button>
-            
+
             <div class="w-full md:w-1/2 h-64 md:h-auto relative">
                 <img id="modalImage" src="" alt="Product" class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent md:hidden"></div>
             </div>
-            
+
             <div class="w-full md:w-1/2 p-8 flex flex-col">
-                <span id="modalTag" class="inline-block w-fit px-3 py-1 bg-green-100 text-green-700 text-xs rounded-full font-semibold mb-3">প্রাকৃতিক ও বিশুদ্ধ</span>
-                <h3 id="modalTitle" class="text-3xl font-bold text-gray-800 mb-4"></h3>
+                <span id="modalTag"
+                    class="inline-block w-fit px-3 py-1 bg-green-100 text-green-700 text-xs rounded-full font-semibold mb-3">Natural
+                    & Pure</span>
+                <h3 id="modalTitle" class="text-3xl font-bold text-gray-800 mb-2"></h3>
+                <p id="modalPrice" class="text-2xl font-bold text-green-600 mb-4"></p>
                 <div class="h-1 w-20 bg-green-500 rounded mb-6"></div>
-                <div id="modalDesc" class="text-gray-600 leading-relaxed space-y-3 mb-8 text-sm md:text-base flex-grow overflow-y-auto pr-2 custom-scrollbar"></div>
-                
+                <div id="modalDesc"
+                    class="text-gray-600 leading-relaxed space-y-3 mb-8 text-sm md:text-base flex-grow overflow-y-auto pr-2 custom-scrollbar">
+                </div>
+
                 <div class="flex flex-col gap-3 mt-auto">
-                    <a href="tel:01328060710" class="w-full py-3.5 bg-green-600 text-white text-center rounded-xl font-bold hover:bg-green-700 transition shadow-lg flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-phone animate-pulse"></i> কল করে অর্ডার করুন
+                    <a href="tel:01328060710"
+                        class="w-full py-3.5 bg-green-600 text-white text-center rounded-xl font-bold hover:bg-green-700 transition shadow-lg flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-phone animate-pulse"></i> Call to Order
                     </a>
-                    <a href="https://m.me/B.mosla" target="_blank" class="w-full py-3.5 bg-blue-50 text-blue-600 border border-blue-200 text-center rounded-xl font-bold hover:bg-blue-100 transition flex items-center justify-center gap-2">
-                        <i class="fa-brands fa-facebook-messenger"></i> মেসেজ দিন
+                    <a href="https://m.me/B.mosla" target="_blank"
+                        class="w-full py-3.5 bg-blue-50 text-blue-600 border border-blue-200 text-center rounded-xl font-bold hover:bg-blue-100 transition flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-facebook-messenger"></i> Message Us
                     </a>
                 </div>
             </div>
@@ -449,6 +732,9 @@
 
     <!-- AOS Animation JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- JavaScript -->
     <script>
@@ -464,250 +750,281 @@
         const products = [
             {
                 id: 1,
-                title: "পাপরিকা গুঁড়া",
+                title: "Paprika Powder",
+                price: 150,
                 keywords: ["paprika", "powder", "marich", "morich", "gura", "chili", "peper", "capsicum", "sweet"],
-                shortDesc: "মিষ্টি মরিচ বা ক্যাপসিকাম শুকিয়ে তৈরি, সুন্দর লাল রঙ এবং হালকা মিষ্টি স্বাদের জন্য।",
-                desc: "পাপরিকা গুঁড়া হলো ক্যাপসিকাম বা মিষ্টি মরিচকে শুকিয়ে গুঁড়ো করে তৈরি করা একটি মশলা। এটি খাবারে একটি সুন্দর লাল রঙ এবং হালকা মিষ্টি স্বাদ যোগ করে, যা কম ঝাল পছন্দ করেন তাদের জন্য দারুণ। পাপরিকা বিভিন্ন রান্না, যেমন ডিম, মুরগি, সালাদ, বিরিয়ানি বা স্যুপে ব্যবহার করা হয়।",
+                shortDesc: "Made from dried sweet peppers or capsicum, for beautiful red color and mildly sweet taste.",
+                desc: "Paprika powder is a spice made by drying and grinding sweet peppers or capsicum. It adds a beautiful red color and mild sweetness to food, great for those who prefer less heat. Used in various dishes like eggs, chicken, salads, biryani, or soups.",
                 img: "https://placehold.co/600x600/e63946/ffffff?text=Paprika+Powder"
             },
             {
                 id: 2,
-                title: "দারচিনি গুঁড়া",
+                title: "Cinnamon Powder",
+                price: 150,
                 keywords: ["cinnamon", "darchini", "daruchini", "gura", "spice", "masala"],
-                shortDesc: "সুগন্ধ এবং স্বাদের জন্য ব্যবহৃত, সর্দি-কাশি ও প্রদাহ কমাতে সহায়ক।",
-                desc: "দারচিনি গুঁড়া হলো দারুচিনি গাছের শুকনো বাকল পিষে তৈরি করা একটি মশলা, যা সুগন্ধ এবং স্বাদের জন্য ব্যবহৃত হয়। এটি বিভিন্ন খাবারে স্বাদ বাড়াতে, যেমন মাংসের রান্না, এবং স্বাস্থ্য উপকারিতার জন্য, যেমন সর্দি, কাশি, অ্যাসিডিটি এবং প্রদাহ কমাতে ব্যবহৃত হয়।",
+                shortDesc: "Used for aroma and flavor, helpful for reducing cold-coughs and inflammation.",
+                desc: "Cinnamon powder is a spice made by grinding the dried bark of cinnamon trees, used for aroma and flavor. It enhances taste in various dishes, like meat preparations, and is used for health benefits such as reducing colds, coughs, acidity, and inflammation.",
                 img: "https://placehold.co/600x600/8d6e63/ffffff?text=Cinnamon+Powder"
             },
             {
                 id: 3,
-                title: "চিরতা গুড়া",
+                title: "Chirata Powder",
+                price: 150,
                 keywords: ["chirata", "chirota", "bitter", "diabetes", "blood", "cleaner"],
-                shortDesc: "রক্ত পরিষ্কারক, ডায়াবেটিস এবং জ্বরে উপকারী।",
-                desc: "চিরতা গুড়ার উপকারিতা: রক্ত পরিষ্কার করে, ত্বক উজ্জ্বল রাখে। জ্বর, সর্দি-কাশি ও ডায়াবেটিসে উপকারী। হজমে সাহায্য করে, গ্যাস ও অম্লতা কমায়। লিভার পরিষ্কার রাখে ও শরীর ডিটক্স করে।",
+                shortDesc: "Blood purifier, beneficial for diabetes and fevers.",
+                desc: "Benefits of Chirata powder: Purifies blood, brightens skin. Beneficial in fever, cold-cough and diabetes. Helps in digestion, reduces gas and acidity. Keeps the liver clean and detoxifies the body.",
                 img: "https://placehold.co/600x600/2e7d32/ffffff?text=Chirata+Powder"
             },
             {
                 id: 4,
-                title: "চারকোল গুঁড়া",
+                title: "Charcoal Powder",
+                price: 150,
                 keywords: ["charcoal", "activated", "face", "mask", "teeth", "whitening", "black"],
-                shortDesc: "ত্বকের যত্ন, দাঁত সাদা করা এবং ডিটক্সিফিকেশনের জন্য অ্যাক্টিভেটেড চারকোল।",
-                desc: "চারকোল গুঁড়া হলো এক ধরনের কালো পাউডার যা কাঠ, নারকেলের ছোবড়া বা অন্যান্য জৈব পদার্থকে উচ্চ তাপমাত্রায় পুড়িয়ে তৈরি করা হয়। এটি ত্বকের যত্ন (যেমন ফেস মাস্ক), দাঁত সাদা করা, এবং কিছু ক্ষেত্রে বিষক্রিয়ার চিকিৎসায় ব্যবহৃত হয়। অ্যাক্টিভেটেড চারকোল একটি বিশেষ ধরনের চারকোল যা আরও বেশি ছিদ্রযুক্ত হওয়ায় শোষণে খুবই কার্যকর।",
+                shortDesc: "Activated charcoal for skin care, teeth whitening, and detoxification.",
+                desc: "Charcoal powder is a type of black powder made by burning wood, coconut shells, or other organic matter at high temperatures. It is used in skin care (like face masks), teeth whitening, and occasionally treating poisoning. Activated charcoal is a special highly porous form effective at absorption.",
                 img: "https://placehold.co/600x600/212121/ffffff?text=Charcoal+Powder"
             },
             {
                 id: 5,
-                title: "চেরি ফল গুঁড়া",
+                title: "Cherry Fruit Powder",
+                price: 150,
                 keywords: ["cherry", "fruit", "vitamin", "antioxidant"],
-                shortDesc: "ভিটামিন ও অ্যান্টিঅক্সিডেন্ট সমৃদ্ধ, হৃদরোগ ও ডায়াবেটিসে সহায়ক।",
-                desc: "চেরি ফল গুঁড়া হলো চেরি ফলকে শুকিয়ে গুঁড়ো করে তৈরি করা একটি উপাদান। এটি পানীয়, স্ন্যাকস এবং অন্যান্য খাবারে পুষ্টি যোগ করতে ব্যবহৃত হয়। এতে ভিটামিন-সি, পটাসিয়াম এবং আয়রন থাকে। এটি অ্যান্টিঅক্সিডেন্ট, প্রদাহ-রোধী বৈশিষ্ট্যযুক্ত এবং হৃদরোগ, ডায়াবেটিস ও উচ্চ রক্তচাপের মতো সমস্যা মোকাবিলায় সহায়ক হতে পারে।",
+                shortDesc: "Rich in vitamins and antioxidants, helpful for heart disease and diabetes.",
+                desc: "Cherry fruit powder is an ingredient made by drying and grinding cherries. It is used to add nutrition to drinks, snacks, and other foods. It contains vitamin-C, potassium, and iron. It is antioxidant, anti-inflammatory, and can help combat problems like heart disease, diabetes, and high blood pressure.",
                 img: "https://placehold.co/600x600/d81b60/ffffff?text=Cherry+Powder"
             },
             {
                 id: 6,
-                title: "ক্যাকটাস পাউডার",
+                title: "Cactus Powder",
+                price: 150,
                 keywords: ["cactus", "kaktas", "weight", "loss"],
-                shortDesc: "প্রাকৃতিক সম্পূরক, স্বাস্থ্য রক্ষায় ও পুষ্টিতে অনন্য।",
-                desc: "ক্যাকটাস পাউডার বলতে মূলত দুটি ভিন্ন জিনিস বোঝানো হতে পারে: একটি হলো ওপুন্টিয়া ক্যাকটাস (নোপাল) থেকে তৈরি স্বাস্থ্য-সম্পর্কিত পাউডার যা একটি প্রাকৃতিক সম্পূরক হিসাবে ব্যবহৃত হয়। অন্যটি 'পাউডার পাফ' ক্যাকটাস গাছ। আমাদের কাছে পাবেন প্রাকৃতিক ও স্বাস্থ্যসম্মত ক্যাকটাস পাউডার।",
+                shortDesc: "Natural supplement, unique in health protection and nutrition.",
+                desc: "Cactus powder generally refers to two different things: one is a health-related powder made from the Opuntia cactus (Nopal) used as a natural supplement. The other is the 'powder puff' cactus plant. With us you will find natural and healthy cactus powder.",
                 img: "https://placehold.co/600x600/66bb6a/ffffff?text=Cactus+Powder"
             },
             {
                 id: 7,
-                title: "আখের জুস পাউডার",
+                title: "Sugarcane Juice Powder",
+                price: 150,
                 keywords: ["sugarcane", "akher", "juice", "ak", "sugar", "cane"],
-                shortDesc: "চিনি ছাড়া প্রাকৃতিক মিষ্টি, পানিশূন্যতা ও ক্লান্তি দূর করে।",
-                desc: "আখের জুস পাউডার হলো আখের রসকে শুকিয়ে তৈরি করা একটি প্রাকৃতিক পাউডার, যা চিনি বা কৃত্রিম উপাদান ছাড়াই তৈরি হয়। এটি পানিশূন্যতা দূর করে, শরীরে শক্তি যোগায় এবং হজমশক্তি বাড়াতে সাহায্য করে। এটি সহজেই পানিতে মিশিয়ে পান করা যায় এবং এটি আখের প্রাকৃতিক মিষ্টতা, খনিজ উপাদান ও অ্যান্টিঅক্সিডেন্ট সমৃদ্ধ।",
+                shortDesc: "Natural sweetener without sugar, relieves dehydration and fatigue.",
+                desc: "Sugarcane juice powder is a natural powder made by drying sugarcane juice, made without sugar or artificial ingredients. It relieves dehydration, adds energy to the body, and helps increase digestion. It easily mixes with water and is rich in sugarcane's natural sweetness, minerals, and antioxidants.",
                 img: "https://placehold.co/600x600/cddc39/333333?text=Sugarcane+Juice"
             },
             {
                 id: 8,
-                title: "বকফুল গুড়া",
+                title: "Bokful Powder",
+                price: 150,
                 keywords: ["bokful", "flower", "fry", "bora"],
-                shortDesc: "বড়া ভাজা বা রান্নার জন্য বকফুলের বিশেষ গুঁড়ো মিশ্রণ।",
-                desc: "বকফুল গুড়া বলতে সম্ভবত বকফুল দিয়ে তৈরি কোনো খাবারের উপকরণ অথবা বকফুলের গুঁড়ো করা উপাদানকে বোঝানো হয়েছে, যেমন ভাজার জন্য বেসন ও চালের গুঁড়োর মিশ্রণ। বকফুল দিয়ে তৈরি বড়া বা এর সাথে সম্পর্কিত খাবারের জন্য এটি সেরা।",
+                shortDesc: "Special powder mixture for frying or cooking Bokful fritters.",
+                desc: "Bokful powder likely refers to an ingredient for making food with Bokful, or a powdered Bokful mixture, like a blend of gram flour and rice flour for frying. It is perfect for Bokful fritters or related dishes.",
                 img: "https://placehold.co/600x600/fff9c4/333333?text=Bokful+Powder"
             },
             {
                 id: 9,
-                title: "বন চাকুন্দা বীজ গুঁড়া",
+                title: "Bon Chakunda Seed Powder",
+                price: 150,
                 keywords: ["bon", "chakunda", "seed", "medicine", "herbal"],
-                shortDesc: "হাঁপানি, বাত ও চর্মরোগ নিরাময়ে কার্যকরী ঔষধি গুণ সম্পন্ন।",
-                desc: "বন চাকুন্দা বীজ গুঁড়া বিভিন্ন ঔষুধি কাজে ব্যবহৃত হয়, যেমন - হাঁপানি, একজিমা, বাতের সমস্যা এবং চর্মরোগ নিরাময়ে। এটি ১ গ্রাম গুঁড়া আধা কাপ গরম পানিতে মিশিয়ে পান করা হয়। এছাড়াও, এই গুঁড়া রক্ত ​​বিশুদ্ধ করতে, কোষ্ঠ পরিষ্কার করতে এবং লিভার ও চোখের রোগ সারাতেও সাহায্য করে।",
+                shortDesc: "Effective medicinal properties for curing asthma, arthritis, and skin diseases.",
+                desc: "Bon Chakunda seed powder is used for various medicinal purposes, such as curing asthma, eczema, arthritis problems, and skin diseases. It is consumed by mixing 1 gram of powder in half a cup of warm water. Also, this powder helps to purify blood, clear bowels, and cure liver and eye diseases.",
                 img: "https://placehold.co/600x600/5d4037/ffffff?text=Bon+Chakunda"
             },
             {
                 id: 10,
-                title: "বংশলোচন গুঁড়া",
+                title: "Banshlochan Powder",
+                price: 150,
                 keywords: ["banshlochan", "bansh", "bamboo", "calcium"],
-                shortDesc: "বাঁশ থেকে সংগৃহীত ক্যালসিয়াম ও মিনারেল সমৃদ্ধ প্রাকৃতিক উপাদান।",
-                desc: "বংশলোচন গুঁড়া হল বাঁশের কান্ডের ভেতর থেকে সংগৃহীত এক ধরনের প্রাকৃতিক পদার্থ। এটি ক্যালসিয়াম, সোডিয়াম, জিঙ্ক, কপার, পটাশিয়াম এবং ফসফরাসে ভরপুর। এটি গুঁড়ো করে দুধ বা মধুর সাথে মিশিয়ে খাওয়া যায় এবং লাড্ডুর মতো খাবারেও ব্যবহার করা হয়। সুস্থ ও শক্তিশালী থাকতে এটি অত্যন্ত কার্যকর।",
+                shortDesc: "Natural ingredient rich in calcium and minerals collected from bamboo.",
+                desc: "Banshlochan powder is a natural substance collected from inside the bamboo stem. It is full of calcium, sodium, zinc, copper, potassium, and phosphorus. It can be ground and eaten mixed with milk or honey and is also used in foods like laddoos. Highly effective for staying healthy and strong.",
                 img: "https://placehold.co/600x600/e0e0e0/333333?text=Banshlochan"
             },
             {
                 id: 11,
-                title: "বরই পাতার গুঁড়া",
+                title: "Jujube Leaf Powder",
+                price: 150,
                 keywords: ["boroi", "leaf", "pata", "hair", "care", "chul"],
-                shortDesc: "চুল পড়া রোধে ও নতুন চুল গজাতে জাদুকরী ভূমিকা রাখে।",
-                desc: "মূলত বড়ই গাছের শুকনো পাতা থেকে তৈরি। এটি চুল পড়া রোধ করে ও নতুন চুল গজাতে সহায়তা করে। খুশকি দূর করে এবং স্ক্যাল্প পরিষ্কার রাখে। প্যাক হিসেবে ব্যবহার করলে ত্বক পরিষ্কার ও উজ্জ্বল হয়। ব্রণ, র‍্যাশ বা প্রদাহ কমাতে সাহায্য করে। অ্যালার্জি এবং পেটের সমস্যাতেও এটি ব্যবহার করা হয়।",
+                shortDesc: "Plays a magical role in preventing hair fall and growing new hair.",
+                desc: "Mainly made from dried leaves of the Jujube tree. It prevents hair fall and helps grow new hair. Removes dandruff and keeps the scalp clean. When used as a pack, it cleans and brightens the skin. Helps reduce acne, rashes, or inflammation. It is also used for allergies and stomach problems.",
                 img: "https://placehold.co/600x600/388e3c/ffffff?text=Boroi+Leaf"
             },
             {
                 id: 12,
-                title: "বহেড়া গুড়া",
+                title: "Bahera Powder",
+                price: 150,
                 keywords: ["bahera", "bohera", "triphala", "hair", "stomach"],
-                shortDesc: "হজম শক্তি বৃদ্ধি, কৃমি নাশ এবং চুল ও ত্বকের যত্নে সেরা।",
-                desc: "বহেড়া গুড়া আমাদের জন্য খুবই উপকারী ঔষধি। এটি হজমের সমস্যা দূর করতে (অম্বল, গ্যাস, কোষ্ঠকাঠিন্য), কাশি, সর্দি ও গলা ব্যথা কমাতে সাহায্য করে। চুল পড়া ও খুশকি কমাতে তেলের সাথে মিশিয়ে ব্যবহার করা হয়। এছাড়াও, এটি শ্বাসকষ্ট, অ্যালার্জি এবং শরীরের শ্লেষ্মা পরিষ্কার করতেও সাহায্য করে।",
+                shortDesc: "Best for increasing digestion, killing worms, and hair & skin care.",
+                desc: "Bahera powder is a highly beneficial herb for us. It helps relieve digestive issues (acidity, gas, constipation), coughs, colds, and sore throats. Used by mixing with oil to reduce hair fall and dandruff. It also helps relieve asthma, allergies, and clear mucus from the body.",
                 img: "https://placehold.co/600x600/81c784/ffffff?text=Bahera+Powder"
             },
             {
                 id: 13,
-                title: "কালোজিরা গুঁড়া",
+                title: "Black Cumin Powder",
+                price: 150,
                 keywords: ["kalojira", "black", "cumin", "seed", "kalogira", "immune"],
-                shortDesc: "সর্বরোগের মহৌষধ, ইমিউনিটি বুস্টার ও সুস্বাস্থ্যের চাবিকাঠি।",
-                desc: "কালোজিরা গুঁড়া রোগ প্রতিরোধ ক্ষমতা বাড়ায়, মাথাব্যথা, হাঁপানি, ডায়াবেটিস এবং যৌন দুর্বলতা কমাতে সাহায্য করে। এটি চিবিয়ে বা গুঁড়া করে মধু, চা বা অন্যান্য খাবারের সাথে মিশিয়ে খাওয়া যায়। এটি রান্নার স্বাদ বাড়াতেও ব্যবহৃত হয়।",
+                shortDesc: "Cure-all medicine, immunity booster, and key to good health.",
+                desc: "Black cumin powder boosts immunity, helps reduce headaches, asthma, diabetes, and sexual weakness. It can be chewed or ground and eaten mixed with honey, tea, or other foods. It is also used to enhance flavor in cooking.",
                 img: "https://placehold.co/600x600/000000/ffffff?text=Black+Cumin"
             },
             {
                 id: 14,
-                title: "কালো হরিতকী গুঁড়া",
+                title: "Black Haritaki Powder",
+                price: 150,
                 keywords: ["black", "haritaki", "horitoki", "detox", "digest"],
-                shortDesc: "ডিটক্সিফিকেশন, হজম এবং ত্বকের যত্নে আয়ুর্বেদিক সমাধান।",
-                desc: "কালো হরিতকী গুঁড়া হজম, কোষ্ঠকাঠিন্য, এবং ত্বক ও চুলের যত্নে ব্যবহৃত হয়। আয়ুর্বেদিক ও ইউনানী চিকিৎসায় এটি একটি গুরুত্বপূর্ণ ভেষজ উপাদান, যা শরীর থেকে টক্সিন দূর করতে এবং রোগ প্রতিরোধ ক্ষমতা বাড়াতেও সাহায্য করে। আমরা পাইকারিতেও এটি সরবরাহ করি।",
+                shortDesc: "Ayurvedic solution for detoxification, digestion, and skin care.",
+                desc: "Black Haritaki powder is used for digestion, constipation, and skin & hair care. It is an important herbal ingredient in Ayurvedic and Unani medicine, helping remove toxins from the body and boosting immunity. We supply this wholesale as well.",
                 img: "https://placehold.co/600x600/4e342e/ffffff?text=Black+Haritaki"
             },
             {
                 id: 15,
-                title: "বিট রুট গুঁড়া",
+                title: "Beetroot Powder",
+                price: 150,
                 keywords: ["beet", "root", "beetroot", "skin", "blood", "red"],
-                shortDesc: "প্রাকৃতিক রক্তবর্ধক, ত্বকের উজ্জ্বলতা এবং এনার্জি ড্রিংক হিসেবে সেরা।",
-                desc: "বিট রুট গুঁড়া পানির সাথে মিশিয়ে জুস হিসেবে, খাবারে প্রাকৃতিক রঙ ও পুষ্টি যোগ করতে, এবং রূপচর্চায় (ত্বকের যত্নে) ব্যবহার করা হয়। এটি রক্তচাপ নিয়ন্ত্রণ এবং ব্যায়ামের কর্মক্ষমতা বৃদ্ধিতেও সহায়ক। পাইকারি এবং খুচরা উভয়ভাবেই নিতে পারেন।",
+                shortDesc: "Natural blood enhancer, skin brightener, and best as an energy drink.",
+                desc: "Beetroot powder is used as a juice by mixing with water, to add natural color and nutrition to food, and in cosmetology (skin care). It regulates blood pressure and aids in increasing exercise performance. Available both wholesale and retail.",
                 img: "https://placehold.co/600x600/880e4f/ffffff?text=Beetroot+Powder"
             },
             {
                 id: 16,
-                title: "রসুন গুঁড়া",
+                title: "Garlic Powder",
+                price: 150,
                 keywords: ["garlic", "rosun", "roshun", "paste", "spice"],
-                shortDesc: "খোসা ছাড়ানোর ঝামেলা ছাড়া ১০০% বিশুদ্ধ রসুনের স্বাদ ও ঘ্রাণ।",
-                desc: "ঘরের রান্নায় রেস্টুরেন্টের ঘ্রাণ চান? রসুন গুঁড়ার এক চিমটি দিতেই খাবারে আসবে দারুণ ফ্লেভার! তেল ছাড়া, ঝামেলা ছাড়া – ১০০% বিশুদ্ধ রসুন গুঁড়া। ব্যবহার করুন সব রান্নায় – মাংস, স্যুপ, ফ্রাই বা বারবিকিউতে! তৈরি হয় তাজা দেশি রসুন দিয়ে।",
+                shortDesc: "100% pure garlic taste and aroma without the hassle of peeling.",
+                desc: "Want a restaurant aroma in home cooking? A pinch of garlic powder adds great flavor to food! Oil-free, hassle-free – 100% pure garlic powder. Use in all cooking – meat, soups, fries, or BBQ! Made from fresh local garlic.",
                 img: "https://placehold.co/600x600/f5f5f5/333333?text=Garlic+Powder"
             },
             {
                 id: 17,
-                title: "আদা গুড়া",
+                title: "Ginger Powder",
+                price: 150,
                 keywords: ["ginger", "ada", "spice", "tea", "cold"],
-                shortDesc: "ঠান্ডা-কাশিতে উপকারী, রান্নার স্বাদ বাড়াতে বিশুদ্ধ আদা গুঁড়া।",
-                desc: "প্রতিদিনের রান্নায় এক চিমটি আদা গুড়া – স্বাদে ও স্বাস্থ্যে দুটোই বাড়ায়! ঠান্ডা-কাশিতে উপকার এবং হজমে সহায়ক। আমাদের আদা গুড়া তৈরি হয় ১০০% খাঁটি শুকনো আদা থেকে – কোনো রং বা কেমিকেল ছাড়া।",
+                shortDesc: "Beneficial for colds & coughs, pure ginger powder to enhance cooking taste.",
+                desc: "A pinch of ginger powder in daily cooking – increases both taste and health! Beneficial for cold-cough and helpful in digestion. Our ginger powder is made from 100% pure dried ginger – no colors or chemicals.",
                 img: "https://placehold.co/600x600/d7ccc8/333333?text=Ginger+Powder"
             },
             {
                 id: 18,
-                title: "মটর ভাজার মসলা",
+                title: "Fried Pea Masala",
+                price: 150,
                 keywords: ["motor", "bhaja", "fry", "snack", "masala"],
-                shortDesc: "চায়ের আড্ডায় মটর ভাজার স্বাদ বাড়াতে বিশেষ মশলা।",
-                desc: "চায়ের সাথে একটু ঝাল-ঝাল মজা! মটর ভাজার মসলা একবার খেলে থামতে পারবেন না। ১০০% আসল উপকরণে তৈরি ঘরে বানানো স্বাদের নিশ্চয়তা। প্রতিটা দানায় টক-ঝাল-মজার বিস্ফোরণ!",
+                shortDesc: "Special spice to enhance the taste of fried peas during tea time.",
+                desc: "A little spicy fun with tea! Once you taste our fried pea masala, you can't stop. Guaranteed home-made taste, made with 100% real ingredients. An explosion of sour-spicy-fun in every grain!",
                 img: "https://placehold.co/600x600/ff9800/ffffff?text=Motor+Bhaja+Masala"
             },
             {
                 id: 19,
-                title: "বারবিকিউ মসলা",
+                title: "BBQ Masala",
+                price: 150,
                 keywords: ["bbq", "barbeque", "grill", "masala", "meat"],
-                shortDesc: "ঝলমলে ও রসালো বারবিকিউ তৈরির জন্য স্পেশাল ব্লেন্ড।",
-                desc: "বারবিকিউ মজা এখন আরও টেস্টি! আমাদের স্পেশাল বারবিকিউ মসলা দিয়ে বানাও ঝলমলে, রসালো এবং সুগন্ধি বারবিকিউ। একবার ট্রাই করলেই মুখে স্বাদ লেগে থাকবে।",
+                shortDesc: "Special blend for making dazzling and juicy barbecue.",
+                desc: "Barbecue fun is now tastier! Make dazzling, juicy, and aromatic barbecue with our special BBQ masala. Once you try it, the taste will linger in your mouth.",
                 img: "https://placehold.co/600x600/bf360c/ffffff?text=BBQ+Masala"
             },
             {
                 id: 20,
-                title: "চানাচুর মসলা",
+                title: "Chanachur Masala",
+                price: 150,
                 keywords: ["chanachur", "snack", "mix", "factory"],
-                shortDesc: "চানাচুর ফ্যাক্টরির জন্য পারফেক্ট টেস্ট এবং লং-লাস্টিং ফ্লেভার।",
-                desc: "চানাচুর প্রোডাকশনে চান পারফেক্ট টেস্ট? আমাদের চানাচুর মসলা বিশেষভাবে তৈরি ফ্যাক্টরি ব্যবহারের জন্য। সমান টেস্ট প্রতিবার, ঝাঁঝালো ঘ্রাণ এবং লং-লাস্টিং ফ্লেভার।",
+                shortDesc: "Perfect taste and long-lasting flavor for Chanachur factories.",
+                desc: "Want perfect taste in Chanachur production? Our Chanachur masala is specially formulated for factory use. Consistent taste every time, pungent aroma, and long-lasting flavor.",
                 img: "https://placehold.co/600x600/ffb74d/333333?text=Chanachur+Masala"
             },
             {
                 id: 21,
-                title: "চিপস মসলা",
+                title: "Chips Masala",
+                price: 150,
                 keywords: ["chips", "potato", "fries", "masala"],
-                shortDesc: "চিপসের স্বাদ এবং গন্ধে ভিন্নতা আনতে প্রিমিয়াম মশলা।",
-                desc: "আপনার চিপস ফ্যাক্টরির জন্য খুঁজছেন পারফেক্ট মসলা? আমাদের প্রিমিয়াম ব্লেন্ড চিপস মসলা – গন্ধে ঝাঁঝালো, স্বাদে ভরপুর এবং দীর্ঘ মেয়াদে টেস্ট ধরে রাখে।",
+                shortDesc: "Premium spice to bring variety in the taste and aroma of chips.",
+                desc: "Looking for the perfect spice for your chips factory? Our premium blend Chips Masala – pungent aroma, full of flavor, and retains taste in the long run.",
                 img: "https://placehold.co/600x600/fbc02d/333333?text=Chips+Masala"
             },
             {
                 id: 22,
-                title: "টমেটো সিজিনিং",
+                title: "Tomato Seasoning",
+                price: 150,
                 keywords: ["tomato", "seasoning", "sauce", "powder"],
-                shortDesc: "সস, স্টু এবং রান্নার স্বাদ বাড়াতে অথবা রূপচর্চায় ব্যবহারের জন্য।",
-                desc: "টমেটো গুঁড়ো সস ও স্টুতে যোগ করে ঘন ও সুস্বাদু করা যায়। এটি ত্বকের যত্নেও ব্যবহার করা যায়, যেমন ফেসপ্যাক ও ময়েশ্চারাইজার হিসেবে, যা ত্বককে উজ্জ্বল ও সতেজ করে। ডার্ক সার্কেল ও ব্রণের চিকিৎসায় এটি কার্যকর।",
+                shortDesc: "To enhance the taste of sauces, stews, and cooking, or for use in skin care.",
+                desc: "Tomato powder can be added to sauces and stews to thicken and flavor them. It can also be used in skin care, like face packs and moisturizers, which brighten and refresh the skin. Effective in treating dark circles and acne.",
                 img: "https://placehold.co/600x600/e53935/ffffff?text=Tomato+Seasoning"
             },
             {
                 id: 23,
-                title: "পেঁয়াজ গুঁড়া",
+                title: "Onion Powder",
+                price: 150,
                 keywords: ["onion", "peyaj", "peyaz", "cooking"],
-                shortDesc: "কাটার ঝামেলা নেই, রান্নায় আনে দ্রুত স্বাদ ও ঝাঁঝ।",
-                desc: "পেঁয়াজ গুঁড়া ব্যবহার করে দ্রুত রান্না করা যায় এবং এটি স্যুপ, গ্রেভি, চাট এবং বিভিন্ন স্ন্যাকসে স্বাদ যোগ করতে ব্যবহার করা হয়। এতে থাকা অ্যান্টিঅক্সিডেন্ট রোগ প্রতিরোধ ক্ষমতা বাড়ায়। চুলের যত্নেও এটি ব্যবহার করা যায়।",
+                shortDesc: "No hassle of chopping, brings quick taste and pungency to cooking.",
+                desc: "Onion powder cooks quickly and is used to add flavor to soups, gravies, chaats, and various snacks. The antioxidants in it boost immunity. It can also be used for hair care.",
                 img: "https://placehold.co/600x600/f8bbd0/333333?text=Onion+Powder"
             },
             {
                 id: 24,
-                title: "পিঙ্ক সল্ট",
+                title: "Pink Salt",
+                price: 150,
                 keywords: ["pink", "salt", "himalayan", "labon", "lobon"],
-                shortDesc: "হিমালয়ান পিঙ্ক সল্ট - খনিজ উপাদানে ভরপুর স্বাস্থ্যকর লবণ।",
-                desc: "পিঙ্ক সল্ট বা হিমালয় পিংক সল্ট হল এক প্রকারের প্রাকৃতিক খনিজ লবণ। এতে প্রায় ৮৪ ধরনের খনিজ উপাদান থাকে। এটি সাধারণ লবণের পরিবর্তে ব্যবহার করা হয় এবং এটি রান্না, ওজন নিয়ন্ত্রণ, হজম ক্ষমতা বৃদ্ধিতে সহায়ক।",
+                shortDesc: "Himalayan Pink Salt - healthy salt rich in minerals.",
+                desc: "Pink salt or Himalayan pink salt is a type of natural mineral salt. It contains about 84 types of minerals. It is used in place of regular salt and helps in cooking, weight regulation, and increasing digestion.",
                 img: "https://placehold.co/600x600/f48fb1/ffffff?text=Pink+Salt"
             },
             {
                 id: 25,
-                title: "ভৃঙ্গরাজ গুঁড়া",
+                title: "Bhringraj Powder",
+                price: 150,
                 keywords: ["bhringraj", "vringoraj", "hair", "chul", "oil"],
-                shortDesc: "চুলের অকালপক্কতা রোধ, চুল পড়া বন্ধ ও নতুন চুল গজাতে সেরা।",
-                desc: "ভৃঙ্গরাজ গুঁড়া প্রধানত চুলের যত্নে ব্যবহৃত হয়। এটি চুল পড়া কমায়, নতুন চুল গজাতে সাহায্য করে, চুলের অকালপক্কতা রোধ করে, এবং চুলকে দীর্ঘ ও কালো করে। এটি মাথা ঠান্ডা রাখতেও সাহায্য করে।",
+                shortDesc: "Best for preventing premature graying, stopping hair fall, and growing new hair.",
+                desc: "Bhringraj powder is mainly used for hair care. It reduces hair fall, helps grow new hair, prevents premature graying, and makes hair long and black. It also helps keep the head cool.",
                 img: "https://placehold.co/600x600/1b5e20/ffffff?text=Bhringraj+Powder"
             },
             {
                 id: 26,
-                title: "বেসন গুড়া",
+                title: "Gram Flour (Besan)",
+                price: 150,
                 keywords: ["beson", "besan", "gram", "flour", "pakora"],
-                shortDesc: "ত্বকের উজ্জ্বলতা এবং সুস্বাদু পকোড়া বা মিষ্টি তৈরিতে অপরিহার্য।",
-                desc: "বেসন হল ছোলার ডাল পিষে তৈরি করা এক ধরনের গুঁড়া, যা প্রোটিন ও ফাইবারে ভরপুর। এটি পকোড়া, চপ, মিষ্টি, হালুয়া তৈরিতে ব্যবহৃত হয়। এছাড়াও রূপচর্চায় বেসন ত্বকের লাবণ্য ধরে রাখতে দারুণ কাজ করে।",
+                shortDesc: "Essential for skin brightness and making delicious pakoras or sweets.",
+                desc: "Besan is a type of powder made by grinding chana dal, rich in protein and fiber. It is used to make pakoras, chops, sweets, halva. Also, in cosmetology, besan works wonderfully to retain skin beauty.",
                 img: "https://placehold.co/600x600/fff176/333333?text=Besan"
             },
             {
                 id: 27,
-                title: "বেল গুঁড়া",
+                title: "Bael Powder",
+                price: 150,
                 keywords: ["bel", "bell", "wood", "apple", "stomach"],
-                shortDesc: "কোষ্ঠকাঠিন্য, আমাশয় এবং পেটের যেকোনো সমস্যার প্রাকৃতিক সমাধান।",
-                desc: "বেল গুঁড়া কোষ্ঠকাঠিন্য দূর করে এবং হজমে সহায়তা করে। এটি আমাশয়, পাকস্থলীর আলসার ও পাইলসে উপকারী। হার্ট ও লিভারের যত্নে এবং শরীরের ডিটক্স হিসেবে এটি দারুণ কার্যকর। শরবত বা পানির সাথে মিশিয়ে খাওয়া যায়।",
+                shortDesc: "Natural solution for constipation, dysentery, and any stomach issues.",
+                desc: "Bael powder relieves constipation and aids in digestion. It is beneficial in dysentery, stomach ulcers, and piles. Highly effective for heart and liver care and as a body detox. Can be consumed by mixing with sherbet or water.",
                 img: "https://placehold.co/600x600/fbc02d/333333?text=Bel+Powder"
             },
             {
                 id: 28,
-                title: "তেজপাতা গুঁড়া",
+                title: "Bay Leaf Powder",
+                price: 150,
                 keywords: ["bay", "leaf", "tejpata", "tezpata", "spice"],
-                shortDesc: "রান্নার সুগন্ধি, ডায়াবেটিস নিয়ন্ত্রণ এবং হজম শক্তির জন্য উপকারী।",
-                desc: "তেজপাতা গুঁড়া রান্নায় স্বাদ ও সুগন্ধ যোগ করে। এটি হজমশক্তির উন্নতি ঘটায়, পেটের গ্যাস ও বদহজম কমায় এবং ডায়াবেটিস নিয়ন্ত্রণে সহায়তা করে। বাতের ব্যথা, মাথা ব্যথা ও ত্বকের যত্নেও এটি ব্যবহার করা হয়।",
+                shortDesc: "Cooking aroma, diabetes control, and beneficial for digestion.",
+                desc: "Bay leaf powder adds taste and aroma to cooking. It improves digestion, reduces stomach gas and indigestion, and helps control diabetes. It is also used for arthritis pain, headaches, and skin care.",
                 img: "https://placehold.co/600x600/a5d6a7/333333?text=Bay+Leaf+Powder"
             },
             {
                 id: 29,
-                title: "বাসক পাতার গুঁড়া",
+                title: "Malabar Nut Leaf Powder",
+                price: 150,
                 keywords: ["basok", "basak", "leaf", "cough", "cold", "kashi"],
-                shortDesc: "কাশি, কফ, হাঁপানি এবং শ্বাসকষ্টের জন্য মহৌষধ।",
-                desc: "বাসক পাতার গুঁড়ার প্রধান উপকারিতাগুলো হলো কাশি ও কফ নিরাময়, ঠান্ডা ও ব্রঙ্কাইটিসের উপশম। এটি ফুসফুস পরিষ্কার রাখে। মধু বা গরম পানির সাথে মিশিয়ে সেবন করলে দ্রুত ফল পাওয়া যায়।",
+                shortDesc: "Cure-all medicine for coughs, phlegm, asthma, and shortness of breath.",
+                desc: "The main benefits of Malabar Nut (Basak) leaf powder are curing coughs & phlegm, and relieving colds & bronchitis. It keeps the lungs clean. Quick results are obtained by consuming it mixed with honey or warm water.",
                 img: "https://placehold.co/600x600/4caf50/ffffff?text=Basak+Leaf"
             },
             {
                 id: 30,
-                title: "চিয়াসিড",
+                title: "Chia Seeds",
+                price: 150,
                 keywords: ["chia", "seed", "chiaseed", "diet", "weight"],
-                shortDesc: "ওমেগা-৩ ও ফাইবার সমৃদ্ধ সুপারফুড, ওজন কমাতে সহায়ক।",
-                desc: "চিয়াসিড একটি অত্যন্ত পুষ্টিকর 'সুপারফুড'। এতে ওমেগা-৩ ফ্যাটি অ্যাসিড, ফাইবার ও প্রোটিন থাকে। এটি হৃদরোগের ঝুঁকি কমানো, ওজন নিয়ন্ত্রণ, হাড়ের স্বাস্থ্য রক্ষা এবং হজমশক্তি বৃদ্ধিতে সাহায্য করে। ভিজিয়ে বা শরবতের সাথে খাওয়া যায়।",
+                shortDesc: "Superfood rich in Omega-3 and fiber, helpful in weight loss.",
+                desc: "Chia seeds are a highly nutritious 'superfood'. It contains omega-3 fatty acids, fiber, and protein. It helps reduce heart disease risk, control weight, protect bone health, and boost digestion. Can be eaten soaked or mixed with sherbet.",
                 img: "https://placehold.co/600x600/424242/ffffff?text=Chia+Seeds"
             },
             {
                 id: 31,
-                title: "বীর্যমনি পাউডার",
+                title: "Birjamani Powder",
+                price: 150,
                 keywords: ["birjamani", "birjomoni", "power", "men", "herbal"],
-                shortDesc: "শারীরিক ও মানসিক শক্তি বৃদ্ধিতে এবং স্নায়ুর দুর্বলতা কাটাতে।",
-                desc: "বীর্যমনি পাউডার শারীরিক ও মানসিক দুর্বলতা, এবং স্নায়ুর দুর্বলতা কাটিয়ে উঠতে সহায়ক। এটি দুধ বা পানির সাথে মিশিয়ে সেবন করা যায়।",
+                shortDesc: "To increase physical and mental strength and overcome nervous weakness.",
+                desc: "Birjamani powder is helpful to overcome physical and mental weakness, and nervous weakness. It can be consumed by mixing it with milk or water.",
                 img: "https://placehold.co/600x600/795548/ffffff?text=Birjamani"
             }
         ];
@@ -720,18 +1037,18 @@
         function renderProducts(filter = "") {
             productGrid.innerHTML = "";
             const searchTerm = filter.toLowerCase();
-            
+
             const filteredProducts = products.filter(p => {
                 const titleMatch = p.title.toLowerCase().includes(searchTerm);
                 const keywordMatch = p.keywords && p.keywords.some(k => k.toLowerCase().includes(searchTerm));
                 return titleMatch || keywordMatch;
             });
 
-            if(filteredProducts.length === 0) {
+            if (filteredProducts.length === 0) {
                 productGrid.innerHTML = `
                 <div class="col-span-full text-center py-16" data-aos="fade-up">
                     <i class="fa-solid fa-box-open text-gray-300 text-6xl mb-4"></i>
-                    <p class="text-gray-500 text-lg">দুঃখিত! এই নামের কোনো পণ্য খুঁজে পাওয়া যায়নি।</p>
+                    <p class="text-gray-500 text-lg">Sorry! No product found with this name.</p>
                 </div>`;
                 return;
             }
@@ -741,7 +1058,7 @@
                 card.className = "bg-white rounded-2xl shadow-sm hover:shadow-2xl transition duration-500 border border-gray-100 flex flex-col h-full group overflow-hidden";
                 // Stagger animations
                 card.setAttribute('data-aos', 'fade-up');
-                card.setAttribute('data-aos-delay', (index % 4) * 100); 
+                card.setAttribute('data-aos-delay', (index % 4) * 100);
 
                 card.innerHTML = `
                     <div class="relative overflow-hidden h-64 bg-gray-100 cursor-pointer" onclick="openModal(${product.id})">
@@ -755,21 +1072,22 @@
                         <div class="flex justify-between items-start mb-2">
                              <h3 class="text-xl font-bold text-gray-800 group-hover:text-green-600 transition">${product.title}</h3>
                         </div>
+                        <p class="text-lg font-bold text-green-600 mb-2">৳${product.price}</p>
                         <p class="text-gray-500 text-sm mb-6 line-clamp-3 leading-relaxed flex-grow">${product.shortDesc}</p>
                         
-                        <div class="flex gap-2 mt-auto">
-                            <button onclick="openModal(${product.id})" class="flex-1 py-2.5 border-2 border-gray-100 text-gray-600 rounded-lg hover:border-green-600 hover:text-green-600 transition font-semibold text-sm">
-                                বিস্তারিত
+                        <div class="flex gap-2 sm:gap-3 mt-auto">
+                            <button onclick="openModal(${product.id})" class="flex-1 flex items-center justify-center gap-1.5 sm:gap-2 px-2 py-2 sm:py-2.5 border border-green-600 text-green-600 rounded-lg hover:bg-green-50 transition-all duration-300 font-bold text-sm bg-white shadow-sm hover:shadow border-solid">
+                                <i class="fa-solid fa-eye"></i> Details
                             </button>
-                             <a href="tel:01328060710" class="flex-1 py-2.5 bg-green-600 text-white text-center rounded-lg hover:bg-green-700 transition font-semibold text-sm shadow-md shadow-green-200">
-                                অর্ডার
+                            <a href="tel:01328060710" class="flex-1 flex items-center justify-center gap-1.5 sm:gap-2 px-2 py-2 sm:py-2.5 border border-transparent bg-[#16a34a] text-white rounded-lg hover:bg-[#15803d] transition-all duration-300 font-bold text-sm shadow-[0_4px_14px_0_rgba(22,163,74,0.39)] hover:shadow-[0_6px_20px_rgba(22,163,74,0.23)] hover:-translate-y-0.5">
+                                <i class="fa-solid fa-basket-shopping"></i> Order
                             </a>
                         </div>
                     </div>
                 `;
                 productGrid.appendChild(card);
             });
-            
+
             // Re-trigger AOS for new elements
             setTimeout(() => AOS.refresh(), 100);
         }
@@ -788,6 +1106,7 @@
             if (!product) return;
 
             document.getElementById('modalTitle').innerText = product.title;
+            document.getElementById('modalPrice').innerText = `৳${product.price}`;
             document.getElementById('modalDesc').innerText = product.desc;
             document.getElementById('modalImage').src = product.img;
 
@@ -804,7 +1123,7 @@
             modal.classList.remove('active');
             modalContent.classList.remove('scale-100');
             modalContent.classList.add('scale-95');
-            
+
             setTimeout(() => {
                 modal.classList.add('hidden');
             }, 300);
@@ -817,7 +1136,7 @@
 
         btn.addEventListener('click', () => {
             menu.classList.toggle('hidden');
-            if(!menu.classList.contains('hidden')) {
+            if (!menu.classList.contains('hidden')) {
                 menu.classList.add('animate-fade-in-down');
             }
         });
@@ -836,6 +1155,30 @@
             }
         });
 
+        // Initialize Swiper
+        const swiper = new Swiper('.reviewsSwiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
+            },
+        });
+
     </script>
 </body>
+
 </html>
